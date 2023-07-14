@@ -1,3 +1,11 @@
 from django.db import models
+from django.contrib.auth.base_user import AbstractBaseUser
 
-
+class UserNet(AbstractBaseUser):
+    """
+    Custom.user.model
+    """
+    middle_name=models.CharField(max_length=50)
+    first_login=models.DateTimeField(null=True)
+    phone=models.CharField(max_length=14)
+    avatar=models.ImageField(upload_to='user/avatar')
